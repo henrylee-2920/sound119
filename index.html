@@ -313,15 +313,14 @@ input[type=range]{accent-color:#ff5a14}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px 48px">
       <div style="display:flex;flex-direction:column"><strong style="color: rgba(255,255,255,0.75); font-weight: 600; font-size: 20px">서울 본사</strong><span style="font-size: 20px">서울특별시 중랑구 겸재로 27길 37<br>A동 402호 킬사운드방음</span></div>
       <div style="display:flex;flex-direction:column"><strong style="color: rgba(255,255,255,0.75); font-weight: 600; font-size: 20px">경기 지점</strong><span style="font-size: 20px">경기도 남양주시 사릉로 58번안길 15-6<br>킬사운드방음</span></div>
-      <div style="display:flex;flex-direction:column"></div>
     </div>
     <span>Copyright © 2026 킬사운드방음 All rights reserved.</span>
   </div></footer>
 
 <sc-if value="{{ showFloat }}" hint-placeholder-val="{{ true }}">
   <div style="position:fixed;right:clamp(14px,2.4vw,24px);bottom:clamp(14px,2.4vw,24px);z-index:30;display:flex;flex-direction:column;gap:10px">
-    <a href="#contact" style="width:clamp(52px,6vw,60px);height:clamp(52px,6vw,60px);border-radius:50%;background:#fee500;color:#191919;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,0.15)" style-hover="color:#191919">TALK</a>
-    <a href="tel:1588-0119" style="width:clamp(52px,6vw,60px);height:clamp(52px,6vw,60px);border-radius:50%;background:#ff5a14;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,0.15)" style-hover="color:#fff">전화</a>
+    <a href="https://open.kakao.com/o/s4VopyRi" target="_blank" rel="noopener" aria-label="카카오톡 상담" style="width:clamp(52px,6vw,60px);height:clamp(52px,6vw,60px);border-radius:50%;background:#fee500;color:#191919;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,0.15)" style-hover="color:#191919">TALK</a>
+    <a href="tel:010-5576-1914" aria-label="전화 상담 010-5576-1914" style="width:clamp(52px,6vw,60px);height:clamp(52px,6vw,60px);border-radius:50%;background:#ff5a14;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,0.15)" style-hover="color:#fff">전화</a>
   </div>
 </sc-if>
 
@@ -478,7 +477,7 @@ class Component extends DCLogic {
         { sub: '1분 소요', title: '견적 계산기', href: '#estimate' },
         { sub: '무료', title: '현장 소음측정 신청', href: '#contact' },
         { sub: 'Portfolio', title: '시공사례 보기', href: '#cases' },
-        { sub: '평일 09–19시', title: '카카오톡 상담', href: '#contact' }
+        { sub: '평일 09–19시', title: '카카오톡 상담', href: 'https://open.kakao.com/o/s4VopyRi' }
       ],
       fields: [
         { title: '주거 방음 공간', img: '주거 방음 공간 사진', desc: '집에서도 마음 놓고 연주하고 쉬는 공간.\n벽체·천장 차음과 바닥 완충 구조로\n이웃 걱정 없는 방을 만듭니다.', tags: '아파트 • 빌라 • 단독주택 • 오피스텔', f: 'images/img_4099.jpg' },
@@ -503,7 +502,7 @@ class Component extends DCLogic {
       visibleCases: s.caseCat === '전체' ? cases : cases.filter(c => c.cat === s.caseCat),
       reviews: [
         { text: '아랫집 민원 때문에 피아노를 거의 못 쳤는데, 시공 후에는 저녁에도 마음 편히 연습하고 있습니다. 시공 전후로 측정해서 보여주셔서 더 믿음이 갔어요.', who: '김○○ 고객님', where: '연습실 · 서대문구' },
-        { text: '여러 업체에 견적을 받아봤는데 원인부터 제대로 측정해 주신 곳은 킬사운드뿐이었습니다. 윗집 발소리가 확실히 줄었어요.', who: '박○○ 고객님', where: '아파트 · 분당' },
+        { text: '여러 업체에 견적을 받아봤는데 원인부터 제대로 측정해 주신 곳은 킬사운드뿐이었습니다. 측정해주시고 끝까지 시공해주셔서 마음에 들었습니다.', who: '박○○ 고객님', where: '아파트 · 분당' },
         { text: '회의실 대화가 밖으로 새던 문제가 깔끔하게 해결됐습니다. 영업에 지장 없도록 일정 맞춰 빠르게 마무리해 주셨어요.', who: '이○○ 대표님', where: '사무실 · 강남구' }
       ].map((r, i) => ({ ...r, delay: i * 120 })),
       steps: [
