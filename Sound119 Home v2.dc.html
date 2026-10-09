@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<script src="./image-slot.js"></script>
+<link rel="preload" as="image" href="images/img_4080.jpg">
+<link rel="preload" as="image" href="images/img_4086.jpg">
+<link rel="preload" as="image" href="images/img_4093.jpg">
+<link rel="preload" as="image" href="images/img_4099.jpg">
+<link rel="preload" as="image" href="images/k1.jpg">
+<link rel="preload" as="image" href="images/k2.jpg">
+<link rel="preload" as="image" href="images/k3.jpg">
+<link rel="preload" as="image" href="images/k4.jpg">
+<link rel="preload" as="image" href="images/k6.jpg">
+<link rel="preload" as="image" href="images/p3786.jpg">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#1d1d1d;font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+a:hover{color:#ff5a14}
+*{box-sizing:border-box}
+input,select,textarea,button{font-family:inherit}
+input[type=range]{accent-color:#ff5a14}
+@keyframes s119-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes s119-scroll{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}50.1%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+</style>
+</helmet>
+
+<div style="background:#fff">
+
+<header style="{{ headerStyle }}">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);height:clamp(64px,8vw,80px);display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#top" style="flex-shrink:0;white-space:nowrap;font-weight:800;font-size:24px;letter-spacing:-0.02em;color:#fff">KILL<span style="color:#ff5a14">SOUND</span></a>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+    <nav style="display:flex;gap:clamp(16px,3vw,44px);font-size:16px;color:rgba(255,255,255,0.75);white-space:nowrap;overflow-x:auto;min-width:0">
+      <a href="#about" style-hover="color:#fff">회사소개</a>
+      <a href="#fields" style-hover="color:#fff">시공분야</a>
+      <a href="#cases" style-hover="color:#fff">시공사례</a>
+      <a href="#estimate" style-hover="color:#fff">견적계산기</a>
+      <a href="#reviews" style-hover="color:#fff">고객후기</a>
+      <a href="#contact" style-hover="color:#fff">상담문의</a>
+    </nav>
+    <a href="#contact" style="flex-shrink:0;white-space:nowrap;font-size:15px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,0.7);padding:10px 22px;border-radius:999px" style-hover="background:#fff;color:#111">무료 견적 받기</a>
+    </sc-if>
+    <sc-if value="{{ mob }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMenu }}" aria-label="메뉴" style="width:44px;height:44px;margin-right:-10px;border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer">
+        <span style="{{ bar1 }}"></span><span style="{{ bar2 }}"></span><span style="{{ bar3 }}"></span>
+      </button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav style="position:absolute;top:100%;left:0;right:0;background:#111;border-top:1px solid #222;padding:8px 20px 24px;display:flex;flex-direction:column;box-shadow:0 20px 40px rgba(0,0,0,0.3)">
+      <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="6">
+        <a href="{{ n.href }}" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;font-size:17px;font-weight:600;color:#fff;border-bottom:1px solid #222">{{ n.label }}</a>
+      </sc-for>
+      <a href="#contact" onClick="{{ closeMenu }}" style="margin-top:20px;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:#ff5a14;color:#fff;font-size:16px;font-weight:700" style-hover="color:#fff">무료 견적 받기</a>
+    </nav>
+  </sc-if>
+</header>
+
+<section id="top" data-screen-label="Hero" style="position:relative;height:100svh;min-height:640px;max-height:960px;background:#1a1a1a;margin-top:calc(-1 * clamp(64px,8vw,80px));overflow:hidden">
+  <div style="position:absolute;inset:0;overflow:hidden">
+    <sc-for list="{{ heroSlides }}" as="hs" hint-placeholder-count="4">
+      <div style="{{ hs.style }}"></div>
+    </sc-for>
+  </div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0.7) 0%,rgba(10,10,10,0.52) 42%,rgba(10,10,10,0.85) 100%);pointer-events:none"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 38% 30% at 62% 72%,rgba(255,90,20,0.16),transparent 70%);pointer-events:none"></div>
+  {{ heroWaves }}
+  <div style="position:absolute;left:0;right:0;bottom:88px;height:44px;pointer-events:none;white-space:nowrap;color:rgba(255,255,255,0.7);font-size:clamp(12px,1.3vw,14px);font-weight:500">
+    <div style="position:absolute;left:6%;bottom:0;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;letter-spacing:0.12em;color:rgba(255,255,255,0.5)">NOISE</span><span>외부 소음 <strong style="color:#fff;font-size:clamp(15px,1.6vw,18px)">78dB</strong></span></div>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;left:62%;bottom:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;white-space:nowrap"><span style="font-size:12px;letter-spacing:0.12em;color:#ff5a14">KILLSOUND</span><span>차음 · 흡음 구조</span></div></sc-if>
+    <div style="position:absolute;right:6%;bottom:0;display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span style="font-size:12px;letter-spacing:0.12em;color:rgba(255,255,255,0.5)">QUIET</span><span>시공 후 <strong style="color:#ff5a14;font-size:clamp(15px,1.6vw,18px)">28dB</strong></span></div>
+  </div>
+  <div style="position:relative;height:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px) clamp(150px,26vh,240px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:28px;color:#fff;pointer-events:none">
+    <span data-reveal="1" style="font-size:clamp(14px,1.6vw,18px);font-weight:500;color:rgba(255,255,255,0.85)">방음 전문 시공 브랜드 킬사운드</span>
+    <h1 data-reveal="1" data-delay="150" style="margin:0;font-size:clamp(31px,5.6vw,76px);line-height:1.25;letter-spacing:-0.03em;font-weight:700">소음 걱정 없는 공간,<br>킬사운드가 만듭니다</h1>
+    <p data-reveal="1" data-delay="300" style="margin:0;font-size:clamp(15px,1.7vw,19px);line-height:1.7;color:rgba(255,255,255,0.8)">현장 측정부터 설계, 시공, 사후 재측정까지 한 번에</p>
+    <div data-reveal="1" data-delay="450" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:12px;pointer-events:auto">
+      <a href="#estimate" style="white-space:nowrap;background:#ff5a14;color:#fff;padding:clamp(15px,1.6vw,18px) clamp(26px,3vw,38px);font-size:clamp(15px,1.5vw,17px);font-weight:600;border-radius:999px" style-hover="background:#e64a08;color:#fff">견적 계산하기</a>
+      <a href="#contact" style="white-space:nowrap;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.8);color:#fff;padding:clamp(14px,1.5vw,17px) clamp(26px,3vw,38px);font-size:clamp(15px,1.5vw,17px);font-weight:600;border-radius:999px" style-hover="background:#fff;color:#111">상담 문의하기</a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Quick menu" style="position:relative;z-index:5;max-width:1200px;margin:-64px auto 0;padding:0 clamp(20px,5vw,40px)">
+  <div data-reveal="1" style="background:#eee;box-shadow:0 16px 48px rgba(0,0,0,0.1);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:1px">
+    <sc-for list="{{ quick }}" as="q" hint-placeholder-count="4">
+      <a href="{{ q.href }}" style="display:flex;flex-direction:column;gap:8px;padding:clamp(20px,3vw,32px) clamp(18px,2.6vw,28px);background:#fff" style-hover="background:#fafafa;color:#1d1d1d">
+        <span style="font-size:clamp(12px,1.2vw,13px);font-weight:600;color:#ff5a14">{{ q.sub }}</span>
+        <span style="display:flex;justify-content:space-between;align-items:center;font-size:clamp(15px,1.7vw,19px);font-weight:700;letter-spacing:-0.02em;gap:8px">{{ q.title }}<span style="font-weight:400;color:#bbb">→</span></span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<section id="about" data-screen-label="About" style="max-width:1200px;margin:0 auto;padding:clamp(100px,13vw,140px) clamp(20px,5vw,40px) clamp(80px,11vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,7vw,80px);align-items:center">
+  <div data-reveal="1" style="aspect-ratio:4/5;background:#f2f2f2;border-radius:28px;overflow:hidden">
+    <image-slot id="v2-about" src="images/img_4093.jpg" shape="rect" placeholder="대표 / 시공팀 현장 사진"></image-slot>
+  </div>
+  <div data-reveal="1" data-delay="150" style="display:flex;flex-direction:column;gap:28px">
+    <span style="font-size:16px;font-weight:700;color:#ff5a14">Why KILLSOUND</span>
+    <h2 style="margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.4;letter-spacing:-0.03em;font-weight:700">소리를 아는 사람이<br>방음을 해야 합니다</h2>
+    <div style="display:flex;flex-direction:column;gap:6px;font-size:clamp(15px,1.5vw,17px);line-height:1.85;color:#555">
+      <p style="margin:0">자재를 두껍게 붙인다고 조용해지지 않습니다.</p>
+      <p style="margin:0">소리가 어디로 새는지, 어떤 소리인지부터 알아야 합니다.</p>
+      <p style="margin:0">킬사운드는 현장을 먼저 측정하고, 그 공간에 맞는 구조를 설계합니다.</p>
+      <p style="margin:0">시공이 끝나면 다시 측정해 결과를 직접 확인시켜 드립니다.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #e5e5e5;margin-top:12px">
+      <div style="display:flex;flex-direction:column;gap:6px;padding:24px 12px 0 0"><strong style="font-size:clamp(14px,1.5vw,17px)">무료 현장 측정</strong><span style="font-size:clamp(12px,1.3vw,14px);line-height:1.6;color:#888">전문 장비로 소음 원인 진단</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding:24px 12px 0 0"><strong style="font-size:clamp(14px,1.5vw,17px)">직영 시공</strong><span style="font-size:clamp(12px,1.3vw,14px);line-height:1.6;color:#888">하도급 없이 자체 시공팀</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding:24px 0 0 0"><strong style="font-size:clamp(14px,1.5vw,17px)">2년 하자보증</strong><span style="font-size:clamp(12px,1.3vw,14px);line-height:1.6;color:#888">완공 후 재측정 보고서 제공</span></div>
+    </div>
+    <a href="#contact" style="align-self:flex-start;margin-top:8px;border:1px solid #1d1d1d;padding:14px 30px;font-size:15px;font-weight:600;border-radius:999px" style-hover="background:#1d1d1d;color:#fff">회사 소개 보기</a>
+  </div>
+</section>
+
+<section id="fields" data-screen-label="Fields" style="background:#111;color:#fff">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(80px,12vw,130px) clamp(20px,5vw,40px)">
+    <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:clamp(44px,7vw,80px)">
+      <span style="font-size:16px;font-weight:700;color:#ff5a14">What We Do</span>
+      <h2 style="margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.4;letter-spacing:-0.03em;font-weight:700">어떤 소음이든, 전국 어디든</h2>
+      <p style="margin:0;font-size:clamp(15px,1.5vw,17px);line-height:1.8;color:rgba(255,255,255,0.6)">주거공간부터 연습실, 상업공간까지 공간의 용도와 소음의 종류에 맞게 시공합니다.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:clamp(56px,9vw,100px)">
+      <sc-for list="{{ fields }}" as="f" hint-placeholder-count="4">
+        <div data-reveal="1" style="{{ f.rowStyle }}">
+          <div style="flex:1 1 min(100%,440px);aspect-ratio:3/2;background:#222;border-radius:28px;overflow:hidden">
+            <div style="width:100%;height:100%;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.05)"><image-slot id="{{ f.slot }}" src="{{ f.src }}" shape="rect" placeholder="{{ f.img }}"></image-slot></div>
+          </div>
+          <div style="flex:1 1 min(100%,360px);display:flex;flex-direction:column;gap:clamp(12px,1.6vw,18px);padding:0 clamp(4px,2vw,20px)">
+            <h3 style="margin:0;font-size:clamp(23px,2.6vw,30px);letter-spacing:-0.03em;font-weight:700">{{ f.title }}</h3>
+            <p style="margin:0;font-size:clamp(15px,1.5vw,17px);line-height:1.85;color:rgba(255,255,255,0.7);white-space:pre-line">{{ f.desc }}</p>
+            <span style="font-size:15px;color:rgba(255,255,255,0.45)">{{ f.tags }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Gallery" style="background:#111;color:#fff;overflow:hidden;padding:0 0 clamp(80px,12vw,130px)">
+  <div data-reveal="1" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,40px) clamp(28px,4vw,40px);display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <span style="font-size:16px;font-weight:700;color:#ff5a14">On Site</span>
+      <h2 style="margin:0;font-size:clamp(24px,2.8vw,36px);line-height:1.4;letter-spacing:-0.03em;font-weight:700">킬사운드가 완성한 실제 현장</h2>
+    </div>
+    <span style="font-size:15px;color:rgba(255,255,255,0.5)">흡음 패널 · 차음 도어 · 방진 천장 시공</span>
+  </div>
+  <div style="display:flex;width:max-content;animation:s119-marquee 120s linear infinite" style-hover="animation-play-state:paused">
+    <sc-for list="{{ gallery }}" as="p" hint-placeholder-count="20">
+      <div style="{{ p.box }}">
+        <img src="{{ p.src }}" alt="킬사운드 시공 현장" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.05)">
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="estimate" data-screen-label="Estimate" style="background:#f7f7f7">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(80px,12vw,130px) clamp(20px,5vw,40px)">
+    <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:clamp(36px,5vw,56px)">
+      <span style="font-size:16px;font-weight:700;color:#ff5a14">Estimate</span>
+      <h2 style="margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.4;letter-spacing:-0.03em;font-weight:700">우리 집 방음, 얼마나 들까?</h2>
+      <p style="margin:0;font-size:17px;color:#777">2가지만 선택하면 예상 견적을 바로 확인할 수 있어요</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start">
+      <div data-reveal="1" style="background:#fff;border-radius:28px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:clamp(28px,3.5vw,36px);box-shadow:0 8px 32px rgba(0,0,0,0.04)">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-size:17px;font-weight:700">공간 유형을 선택해 주세요</span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <sc-for list="{{ typeOpts }}" as="o" hint-placeholder-count="4">
+              <button onClick="{{ o.pick }}" style="{{ o.style }}">{{ o.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:17px;font-weight:700">시공 면적</span><span style="font-size:20px;font-weight:700;color:#ff5a14">{{ area }}평</span></div>
+          <input type="range" min="1" max="60" value="{{ area }}" onChange="{{ setArea }}" style="width:100%">
+          <div style="display:flex;justify-content:space-between;font-size:13px;color:#aaa"><span>1평</span><span>60평</span></div>
+        </div>
+      </div>
+      <div data-reveal="1" data-delay="150" style="background:#1d1d1d;color:#fff;border-radius:28px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:24px">
+        <span style="font-size:15px;color:rgba(255,255,255,0.6)">예상 견적 (자재 + 시공비, VAT 별도)</span>
+        <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+          <span style="font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-0.03em">{{ priceText }}</span>
+          <span style="font-size:20px;font-weight:600">{{ priceUnit }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;background:rgba(255,255,255,0.06);border-radius:16px;padding:8px 20px">
+          <div style="display:flex;justify-content:space-between;padding:12px 0;font-size:15px;border-bottom:1px solid rgba(255,255,255,0.08)"><span style="color:rgba(255,255,255,0.55)">공간</span><span>{{ typeLabel }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;font-size:15px;border-bottom:1px solid rgba(255,255,255,0.08)"><span style="color:rgba(255,255,255,0.55)">면적 / 단가</span><span>{{ area }}평 · {{ unitText }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;font-size:15px"><span style="color:rgba(255,255,255,0.55)">예상 공사기간</span><span>{{ days }}</span></div>
+        </div>
+        <a href="#contact" onClick="{{ carryToForm }}" style="background:#ff5a14;color:#fff;text-align:center;padding:18px;border-radius:999px;font-weight:700;font-size:17px" style-hover="background:#e64a08;color:#fff">이 조건으로 상담 신청하기</a>
+        <span style="font-size:13px;line-height:1.6;color:rgba(255,255,255,0.45)">* 실제 견적은 현장 구조와 소음원에 따라 달라질 수 있으며, 무료 현장 측정 후 확정됩니다.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases" data-screen-label="Cases" style="max-width:1200px;margin:0 auto;padding:clamp(80px,12vw,130px) clamp(20px,5vw,40px)">
+  <div data-reveal="1" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="font-size:16px;font-weight:700;color:#ff5a14">Portfolio</span>
+      <h2 style="margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.4;letter-spacing:-0.03em;font-weight:700">최근 시공사례</h2>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <sc-for list="{{ caseFilters }}" as="c" hint-placeholder-count="5">
+        <button onClick="{{ c.pick }}" style="{{ c.style }}">{{ c.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(32px,4vw,40px) 24px">
+    <sc-for list="{{ visibleCases }}" as="k" hint-placeholder-count="6">
+      <div data-reveal="1" data-delay="{{ k.delay }}" style="display:flex;flex-direction:column;gap:16px">
+        <div style="aspect-ratio:4/3;background:#f2f2f2;overflow:hidden;border-radius:24px">
+          <div style="width:100%;height:100%;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.06)"><image-slot id="{{ k.slot }}" src="{{ k.src }}" shape="rect" placeholder="시공사례 사진"></image-slot></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-size:13px;font-weight:600;color:#ff5a14">{{ k.cat }}</span>
+          <strong style="font-size:19px;letter-spacing:-0.02em">{{ k.title }}</strong>
+          <span style="font-size:14px;color:#888">{{ k.meta }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:flex;justify-content:center;margin-top:clamp(40px,6vw,64px)">
+    <a href="#cases" style="border:1px solid #1d1d1d;padding:16px 48px;font-size:15px;font-weight:600;border-radius:999px" style-hover="background:#1d1d1d;color:#fff">시공사례 더보기</a>
+  </div>
+</section>
+
+<section id="reviews" data-screen-label="Reviews" style="background:#f7f7f7">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(80px,12vw,130px) clamp(20px,5vw,40px)">
+    <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:clamp(40px,6vw,64px)">
+      <span style="font-size:16px;font-weight:700;color:#ff5a14">Client Reviews</span>
+      <h2 style="margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.4;letter-spacing:-0.03em;font-weight:700">고객들이 말하는 킬사운드</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
+      <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+        <div data-reveal="1" data-delay="{{ r.delay }}" style="background:#fff;padding:clamp(28px,4vw,40px) clamp(24px,3.6vw,36px);border-radius:28px;display:flex;flex-direction:column;gap:20px">
+          <span style="color:#ff5a14;font-size:16px;letter-spacing:2px">★★★★★</span>
+          <p style="margin:0;font-size:16px;line-height:1.85;color:#444;flex:1">"{{ r.text }}"</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:20px;border-top:1px solid #eee;font-size:14px"><strong>{{ r.who }}</strong><span style="color:#999">{{ r.where }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Process" style="max-width:1200px;margin:0 auto;padding:clamp(80px,12vw,130px) clamp(20px,5vw,40px)">
+  <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:clamp(40px,6vw,64px)">
+    <span style="font-size:16px;font-weight:700;color:#ff5a14">Process</span>
+    <h2 style="margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.4;letter-spacing:-0.03em;font-weight:700">상담부터 사후관리까지</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:12px">
+    <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+      <div data-reveal="1" data-delay="{{ s.delay }}" style="border:1px solid #e5e5e5;border-radius:24px;padding:clamp(22px,3vw,32px) clamp(14px,2vw,24px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(8px,1.2vw,12px)">
+        <span style="font-size:13px;font-weight:700;color:#ff5a14">STEP {{ s.no }}</span>
+        <strong style="font-size:clamp(16px,1.7vw,19px);letter-spacing:-0.02em">{{ s.title }}</strong>
+        <span style="font-size:14px;line-height:1.65;color:#777;white-space:pre-line">{{ s.desc }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+
+
+<section id="contact" data-screen-label="Contact" style="background:#111;color:#fff">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(80px,12vw,130px) clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,72px)">
+    <div data-reveal="1" style="display:flex;flex-direction:column;gap:24px">
+      <span style="font-size:16px;font-weight:700;color:#ff5a14">Contact</span>
+      <h2 style="margin:0;font-size:clamp(26px,3.4vw,44px);line-height:1.4;letter-spacing:-0.03em;font-weight:700">우리 공간도<br>상담받을 수 있을까요?</h2>
+      <p style="margin:0;font-size:17px;line-height:1.8;color:rgba(255,255,255,0.6)">문의를 남겨주시면 담당자가 24시간 내 연락드립니다.<br>현장 소음 측정은 무료로 진행됩니다.</p>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-top:20px">
+        <span style="font-size:15px;color:rgba(255,255,255,0.5)">대표전화</span>
+        <span style="font-size: 40px; font-weight: 700">대표 : <a href="tel:010-6242-6899" style="font-weight: 700">010-6242-6899</a><br>팀장 : <a href="tel:010-5576-1914" style="font-weight: 700">010-5576-1914</a></span>
+        <span style="font-size:15px;color:rgba(255,255,255,0.5)">평일 09:00 – 19:00 · 토요일 09:00 – 13:00</span>
+      </div>
+    </div>
+    <div data-reveal="1" data-delay="150" style="background:#fff;color:#1d1d1d;border-radius:28px;padding:clamp(24px,4vw,40px)">
+      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:18px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:12px">
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600">이름<input required="" placeholder="이름" style="padding:14px 16px;border:1px solid #ddd;border-radius:12px;font-size:16px"></label>
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600">연락처<input required="" type="tel" placeholder="010-0000-0000" style="padding:14px 16px;border:1px solid #ddd;border-radius:12px;font-size:16px"></label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600">문의 내용<textarea rows="4" placeholder="어떤 소음 때문에 불편하신가요? (예: 윗집 발소리, 피아노 소리)" style="padding:14px 16px;border:1px solid #ddd;border-radius:12px;font-size:16px;resize:vertical"></textarea></label>
+          <label style="display:flex;gap:10px;align-items:center;font-size:14px;color:#666"><input required="" type="checkbox" style="flex-shrink:0;width:18px;height:18px;accent-color:#ff5a14">개인정보 수집 및 이용에 동의합니다.</label>
+          <button type="submit" style="background:#ff5a14;color:#fff;border:0;padding:18px;border-radius:999px;font-size:17px;font-weight:700;cursor:pointer" style-hover="background:#e64a08">상담 신청하기</button>
+        </form>
+      </sc-if>
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="min-height:400px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:14px">
+          <strong style="font-size:26px;letter-spacing:-0.02em">상담 신청이 완료되었습니다</strong>
+          <span style="font-size:16px;line-height:1.7;color:#666">담당자가 확인 후 빠르게 연락드리겠습니다.</span>
+          <button onClick="{{ reset }}" style="margin-top:12px;background:none;border:1px solid #1d1d1d;padding:12px 24px;font-size:14px;cursor:pointer;border-radius:999px">다시 작성하기</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section><footer style="background:#0a0a0a;color:rgba(255,255,255,0.45);border-top:1px solid #222">
+  
+<div style="max-width:1200px;margin:0 auto;padding:48px clamp(20px,5vw,40px) 96px;display:flex;flex-direction:column;gap:20px;font-size:13px;line-height:1.9">
+    <div style="display:flex;gap:20px;color:rgba(255,255,255,0.7)"><a href="#">이용약관</a><a href="#" style="font-weight:700">개인정보처리방침</a></div>
+    <span style="font-weight: 800; font-size: 40px; color: #fff; letter-spacing: -0.02em">KILL<span style="color:#ff5a14">SOUND</span></span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px 48px">
+      <div style="display:flex;flex-direction:column"><strong style="color: rgba(255,255,255,0.75); font-weight: 600; font-size: 20px">서울 본사</strong><span style="font-size: 20px">서울특별시 중랑구 겸재로 27길 37<br>A동 402호 킬사운드방음</span></div>
+      <div style="display:flex;flex-direction:column"><strong style="color: rgba(255,255,255,0.75); font-weight: 600; font-size: 20px">경기 지점</strong><span style="font-size: 20px">경기도 남양주시 사릉로 58번안길 15-6<br>킬사운드방음</span></div>
+      <div style="display:flex;flex-direction:column"></div>
+    </div>
+    <span>Copyright © 2026 킬사운드방음 All rights reserved.</span>
+  </div></footer>
+
+<sc-if value="{{ showFloat }}" hint-placeholder-val="{{ true }}">
+  <div style="position:fixed;right:clamp(14px,2.4vw,24px);bottom:clamp(14px,2.4vw,24px);z-index:30;display:flex;flex-direction:column;gap:10px">
+    <a href="#contact" style="width:clamp(52px,6vw,60px);height:clamp(52px,6vw,60px);border-radius:50%;background:#fee500;color:#191919;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,0.15)" style-hover="color:#191919">TALK</a>
+    <a href="tel:1588-0119" style="width:clamp(52px,6vw,60px);height:clamp(52px,6vw,60px);border-radius:50%;background:#ff5a14;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,0.15)" style-hover="color:#fff">전화</a>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;floatingButtons&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { type: 'home', area: 1, grade: 'std', caseCat: '전체', submitted: false, formType: 'practice', scrolled: false, heroIdx: 0, vw: typeof window !== 'undefined' ? window.innerWidth : 1280, menuOpen: false };
+
+  TYPES = [
+    { id: 'home', label: '주거 방음 공간', lo: 150, hi: 170, days: '약 3일' },
+    { id: 'practice', label: '음악 연습실 · 학원', lo: 170, hi: 190, days: '1주 이상' },
+    { id: 'studio', label: '홀 스튜디오', lo: 200, hi: null, days: '2주 이상' },
+    { id: 'booth', label: '방음 부스', lo: 200, hi: null, days: '당일 설치 가능(면적에 따라 상이)' }
+  ];
+  HERO = ['images/k4.jpg', 'images/p3786.jpg', 'images/img_4080.jpg', 'images/k2.jpg'];
+  GRADES = [
+    { id: 'std', label: '기본', desc: '생활소음 차단', m: 1 },
+    { id: 'pro', label: '고급', desc: '대화·TV 소리', m: 1.35 },
+    { id: 'max', label: '프리미엄', desc: '악기·저음까지', m: 1.75 }
+  ];
+
+  componentDidMount() {
+    this.setupMotion();
+    if ((this.props.motion ?? true) !== false) this.heroTimer = setInterval(() => this.setState(s => ({ heroIdx: (s.heroIdx + 1) % this.HERO.length })), 5500);
+    this.onScroll = () => { const s = window.scrollY > 40; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onResize = () => { const vw = window.innerWidth; if (vw !== this.state.vw) this.setState({ vw, menuOpen: vw < 860 && this.state.menuOpen }); };
+    window.addEventListener('resize', this.onResize);
+    this.onScroll();
+  }
+  waveRef = el => { if (el && el !== this.cv) { this.cv = el; this.startWaves(); } };
+  startWaves() {
+    const cv = this.cv, ctx = cv.getContext('2d');
+    const still = (this.props.motion ?? true) === false || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+    let w = 0, h = 0, dpr = 1;
+    const size = () => { const r = cv.getBoundingClientRect(); dpr = Math.min(2, window.devicePixelRatio || 1); w = r.width; h = r.height; cv.width = w * dpr; cv.height = h * dpr; if (still) draw(0); };
+    const lines = [
+      { a: 1, f: 1, s: 1, c: '255,90,20', al: 0.95, lw: 2 },
+      { a: 0.8, f: 1.35, s: -0.7, c: '255,255,255', al: 0.4, lw: 1.2 },
+      { a: 0.6, f: 0.8, s: 0.55, c: '255,255,255', al: 0.22, lw: 1 },
+      { a: 0.9, f: 1.8, s: 1.25, c: '255,255,255', al: 0.14, lw: 1 },
+      { a: 0.45, f: 2.4, s: -1.1, c: '255,150,90', al: 0.35, lw: 1 }
+    ];
+    const t0 = performance.now();
+    const draw = now => {
+      const t = still ? 3 : (now - t0) / 1000;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
+      const wx = w * 0.62, A = Math.min(64, h * 0.075, w * 0.11), cy = Math.min(h * 0.72, h - 148 - A * 1.5);
+      const intro = still ? 1 : Math.min(1, t / 1.8), e = 1 - Math.pow(1 - intro, 3);
+      ctx.fillStyle = 'rgba(255,255,255,0.035)'; ctx.fillRect(wx - 9, cy - A * 2.2, 18, A * 4.4);
+      lines.forEach((L, i) => {
+        ctx.beginPath();
+        const pulse = 0.72 + 0.28 * Math.sin(t * 1.3 + i * 1.7);
+        for (let x = 0; x <= w; x += 3) {
+          const n = x / w;
+          const env = x < wx ? Math.sin(Math.min(1, n / 0.14) * Math.PI / 2) : 0.04 + 0.96 * Math.exp(-(x - wx) / 16);
+          const v = Math.sin(x * 0.012 * L.f + t * 2.2 * L.s + i) * 0.6 + Math.sin(x * 0.031 * L.f - t * 3.1 * L.s + i * 2) * 0.28 + Math.sin(x * 0.006 + t * 0.8 + i) * 0.4;
+          const y = cy + A * L.a * env * pulse * e * v;
+          x ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+        }
+        ctx.strokeStyle = 'rgba(' + L.c + ',' + (L.al * e) + ')'; ctx.lineWidth = L.lw; ctx.stroke();
+      });
+      const g = ctx.createLinearGradient(0, cy - A * 2.2, 0, cy + A * 2.2);
+      g.addColorStop(0, 'rgba(255,90,20,0)'); g.addColorStop(0.5, 'rgba(255,90,20,' + e + ')'); g.addColorStop(1, 'rgba(255,90,20,0)');
+      ctx.save(); ctx.shadowColor = 'rgba(255,90,20,0.8)'; ctx.shadowBlur = 18; ctx.fillStyle = g; ctx.fillRect(wx - 1, cy - A * 2.2, 2, A * 4.4); ctx.restore();
+      if (!still) this.raf = requestAnimationFrame(draw);
+    };
+    size();
+    this.ro = new ResizeObserver(size); this.ro.observe(cv);
+    if (!still) this.raf = requestAnimationFrame(draw);
+  }
+  componentWillUnmount() {
+    clearInterval(this.heroTimer);
+    cancelAnimationFrame(this.raf); this.ro && this.ro.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onResize);
+    this.io && this.io.disconnect(); this.mo && this.mo.disconnect();
+  }
+  setupMotion() {
+    if ((this.props.motion ?? true) === false || !('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    this.io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = '1'; e.target.style.transform = 'none';
+      this.io.unobserve(e.target);
+    }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    const scan = () => document.querySelectorAll('[data-reveal]:not([data-rv])').forEach(el => {
+      el.setAttribute('data-rv', '1');
+      const d = +el.getAttribute('data-delay') || 0;
+      el.style.opacity = '0'; el.style.transform = 'translateY(48px)';
+      el.style.transition = 'opacity 1s ' + ease + ' ' + d + 'ms, transform 1s ' + ease + ' ' + d + 'ms';
+      this.io.observe(el);
+    });
+    scan();
+    this.mo = new MutationObserver(scan);
+    this.mo.observe(document.body, { childList: true, subtree: true });
+    const kb = document.querySelector('[data-kenburns]');
+    if (kb) {
+      kb.style.transform = 'scale(1.12)';
+      requestAnimationFrame(() => requestAnimationFrame(() => { kb.style.transition = 'transform 4s ' + ease; kb.style.transform = 'scale(1)'; }));
+    }
+  }
+
+  chip(active, small) {
+    return { padding: small ? '9px 18px' : '12px 20px', borderRadius: 999, fontSize: small ? 14 : 15, fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap',
+      border: '1px solid ' + (active ? '#ff5a14' : '#ddd'),
+      background: active ? '#ff5a14' : '#fff', color: active ? '#fff' : '#555' };
+  }
+
+  renderVals() {
+    const s = this.state;
+    const t = this.TYPES.find(x => x.id === s.type);
+    const g = this.GRADES.find(x => x.id === s.grade);
+    const fmt = n => (Math.round(n / 10) * 10).toLocaleString();
+    const cases = [
+      { cat: '연습실·학원', title: '그랜드 피아노 레슨룸', meta: '흡음 벽체 + 흡음 천장 · 차음 도어', f: 'images/k4.jpg' },
+      { cat: '스튜디오', title: '촬영 · 라이브 홀 스튜디오', meta: '대형 홀 흡음 · 차음 구조', f: 'images/p3786.jpg' },
+      { cat: '스튜디오', title: '목재 슬랫 홀 흡음 시공', meta: '슬랫 흡음 벽체 · 방진 마루', f: 'images/k2.jpg' },
+      { cat: '연습실·학원', title: '음악학원 연습실 복도', meta: '흡음 패널 · 차음 도어 · 간접 조명', f: 'images/img_4093.jpg' },
+      { cat: '주거', title: '주거 방음 공간', meta: '흡음 벽체 · 방음 도어 · 마루 바닥', f: 'images/img_4099.jpg' },
+      { cat: '방음부스', title: '방음 부스 시공', meta: '박스인박스 구조 · 차음 도어', f: 'images/img_4080.jpg' }
+    ].map((c, i) => ({ ...c, slot: 'v2-case-' + i, src: c.f, delay: (i % 3) * 120 }));
+    const cats = ['전체', '주거', '연습실·학원', '스튜디오', '방음부스'];
+    const rowBase = { display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: s.vw < 860 ? 24 : 56 };
+    return {
+      headerStyle: { position: 'sticky', top: 0, zIndex: 20, transition: 'background .3s, border-color .3s',
+        background: (s.scrolled || s.menuOpen) ? 'rgba(17,17,17,0.96)' : 'transparent',
+        borderBottom: '1px solid ' + (s.scrolled ? '#222' : 'rgba(255,255,255,0.2)') },
+      heroWaves: this._waves || (this._waves = React.createElement('canvas', { ref: this.waveRef, style: { position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' } })),
+      mob: s.vw < 860, desktop: s.vw >= 860, menuOpen: s.menuOpen && s.vw < 860,
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      bar1: { display: 'block', width: 22, height: 2, background: '#fff', borderRadius: 2, transition: 'transform .25s', transform: s.menuOpen ? 'translateY(8px) rotate(45deg)' : 'none' },
+      bar2: { display: 'block', width: 22, height: 2, background: '#fff', borderRadius: 2, transition: 'opacity .2s', opacity: s.menuOpen ? 0 : 1 },
+      bar3: { display: 'block', width: 22, height: 2, background: '#fff', borderRadius: 2, transition: 'transform .25s', transform: s.menuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' },
+      navItems: [
+        { label: '회사소개', href: '#about' }, { label: '시공분야', href: '#fields' }, { label: '시공사례', href: '#cases' },
+        { label: '견적계산기', href: '#estimate' }, { label: '고객후기', href: '#reviews' }, { label: '상담문의', href: '#contact' }
+      ],
+      gallery: [0, 1].flatMap(() => [['images/k4.jpg', 1], ['images/img_4093.jpg', 0], ['images/p3786.jpg', 1], ['images/k3.jpg', 0], ['images/k1.jpg', 1], ['images/img_4086.jpg', 0], ['images/img_4080.jpg', 1], ['images/k6.jpg', 0], ['images/k2.jpg', 1], ['images/img_4099.jpg', 1]]).map(([f, land]) => ({
+        src: f,
+        box: { flexShrink: 0, height: s.vw < 860 ? 240 : 380, aspectRatio: land ? '4 / 3' : '3 / 4', marginRight: s.vw < 860 ? 12 : 16, borderRadius: 24, overflow: 'hidden', background: '#222' }
+      })),
+      heroSlides: this.HERO.map((f, i) => {
+        const on = i === s.heroIdx;
+        return { style: { position: 'absolute', inset: 0, backgroundImage: 'url(' + f + ')', backgroundSize: 'cover', backgroundPosition: 'center',
+          opacity: on ? 1 : 0, transform: on ? 'scale(1.08)' : 'scale(1)',
+          transition: on ? 'opacity 1.8s ease, transform 7.5s linear' : 'opacity 1.8s ease, transform 0s linear 1.8s' } };
+      }),
+      showFloat: this.props.floatingButtons ?? true,
+      quick: [
+        { sub: '1분 소요', title: '견적 계산기', href: '#estimate' },
+        { sub: '무료', title: '현장 소음측정 신청', href: '#contact' },
+        { sub: 'Portfolio', title: '시공사례 보기', href: '#cases' },
+        { sub: '평일 09–19시', title: '카카오톡 상담', href: '#contact' }
+      ],
+      fields: [
+        { title: '주거 방음 공간', img: '주거 방음 공간 사진', desc: '집에서도 마음 놓고 연주하고 쉬는 공간.\n벽체·천장 차음과 바닥 완충 구조로\n이웃 걱정 없는 방을 만듭니다.', tags: '아파트 • 빌라 • 단독주택 • 오피스텔', f: 'images/img_4099.jpg' },
+        { title: '음악 연습실 & 학원', img: '피아노 연습실 사진', desc: '여러 실이 동시에 울려도 서로 섞이지 않도록\n실별 차음 구조와 흡음 마감을\n함께 설계합니다.', tags: '피아노 • 성악 • 관현악 • 실용음악 학원', f: 'images/k1.jpg' },
+        { title: '홀 스튜디오', img: '홀 스튜디오 사진', desc: '촬영, 라이브, 공연까지 소화하는 넓은 홀.\n울림을 잡는 흡음 설계와\n외부로 새지 않는 차음 구조를 시공합니다.', tags: '촬영 스튜디오 • 공연 홀 • 댄스 • 라이브 방송', f: 'images/p3786.jpg' },
+        { title: '방음 부스', img: '방음 부스 사진', desc: '보컬 녹음, 화상회의, 개인 연습까지.\n공간에 딱 맞는 크기로\n박스인박스 방음 부스를 제작합니다.', tags: '보컬 부스 • 드럼 부스 • 1인 연습실 • 회의 부스', f: 'images/img_4080.jpg' }
+      ].map((f, i) => ({ ...f, slot: 'v2-field-' + i, src: f.f, rowStyle: { ...rowBase, flexDirection: i % 2 ? 'row-reverse' : 'row' } })),
+      typeOpts: this.TYPES.map(x => ({ id: x.id, label: x.label, style: this.chip(x.id === s.type), pick: () => this.setState({ type: x.id }) })),
+      gradeOpts: this.GRADES.map(x => {
+        const a = x.id === s.grade;
+        return { label: x.label, desc: x.desc, pick: () => this.setState({ grade: x.id }),
+          style: { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 4, padding: '16px 18px', borderRadius: 16, cursor: 'pointer', textAlign: 'left',
+            border: '1px solid ' + (a ? '#ff5a14' : '#ddd'), background: a ? '#fff4ee' : '#fff', color: a ? '#ff5a14' : '#555' } };
+      }),
+      area: s.area,
+      setArea: e => this.setState({ area: +e.target.value }),
+      priceText: fmt(t.lo * s.area) + ' ~ ' + (t.hi ? fmt(t.hi * s.area) : ''), priceUnit: t.hi ? '만원' : '만원 이상',
+      unitText: t.hi ? '평당 ' + t.lo + ' ~ ' + t.hi + '만원' : '평당 ' + t.lo + '만원 이상',
+      typeLabel: t.label, gradeLabel: g.label, days: t.days,
+      carryToForm: () => this.setState({ formType: s.type }),
+      caseFilters: cats.map(c => ({ label: c, style: this.chip(c === s.caseCat, true), pick: () => this.setState({ caseCat: c }) })),
+      visibleCases: s.caseCat === '전체' ? cases : cases.filter(c => c.cat === s.caseCat),
+      reviews: [
+        { text: '아랫집 민원 때문에 피아노를 거의 못 쳤는데, 시공 후에는 저녁에도 마음 편히 연습하고 있습니다. 시공 전후로 측정해서 보여주셔서 더 믿음이 갔어요.', who: '김○○ 고객님', where: '연습실 · 서대문구' },
+        { text: '여러 업체에 견적을 받아봤는데 원인부터 제대로 측정해 주신 곳은 킬사운드뿐이었습니다. 윗집 발소리가 확실히 줄었어요.', who: '박○○ 고객님', where: '아파트 · 분당' },
+        { text: '회의실 대화가 밖으로 새던 문제가 깔끔하게 해결됐습니다. 영업에 지장 없도록 일정 맞춰 빠르게 마무리해 주셨어요.', who: '이○○ 대표님', where: '사무실 · 강남구' }
+      ].map((r, i) => ({ ...r, delay: i * 120 })),
+      steps: [
+        { no: '01', title: '상담 신청', desc: '전화·카톡·온라인으로\n소음 상황 접수' },
+        { no: '02', title: '현장 측정', desc: '전문가 방문\n소음 측정 (무료)' },
+        { no: '03', title: '설계 · 견적', desc: '측정 결과 기반\n맞춤 설계안 제안' },
+        { no: '04', title: '시공', desc: '자체 시공팀\n직영 시공' },
+        { no: '05', title: '재측정 · A/S', desc: '결과 보고서 제공\n2년 하자보증' }
+      ].map((s, i) => ({ ...s, delay: i * 100 })),
+      formType: s.formType, setFormType: e => this.setState({ formType: e.target.value }),
+      submitted: s.submitted, notSubmitted: !s.submitted,
+      submit: e => { e.preventDefault(); this.setState({ submitted: true }); },
+      reset: () => this.setState({ submitted: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
