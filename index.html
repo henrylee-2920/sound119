@@ -10,16 +10,14 @@
 <helmet>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <script src="./image-slot.js"></script>
-<link rel="preload" as="image" href="images/img_4080.jpg">
-<link rel="preload" as="image" href="images/img_4086.jpg">
-<link rel="preload" as="image" href="images/img_4093.jpg">
-<link rel="preload" as="image" href="images/img_4099.jpg">
-<link rel="preload" as="image" href="images/k1.jpg">
-<link rel="preload" as="image" href="images/k2.jpg">
-<link rel="preload" as="image" href="images/k3.jpg">
-<link rel="preload" as="image" href="images/k4.jpg">
-<link rel="preload" as="image" href="images/k6.jpg">
-<link rel="preload" as="image" href="images/p3786.jpg">
+<link rel="preload" as="image" href="images/n_00.jpg">
+<link rel="preload" as="image" href="images/n_14.jpg">
+<link rel="preload" as="image" href="images/n_10.jpg">
+<link rel="preload" as="image" href="images/n_06.jpg">
+<link rel="preload" as="image" href="images/n_11.jpg">
+<link rel="preload" as="image" href="images/n_13.jpg">
+<link rel="preload" as="image" href="images/n_07.jpg">
+<link rel="preload" as="image" href="images/n_09.jpg">
 <style>
 html{scroll-behavior:smooth}
 body{margin:0;background:#fff;color:#1d1d1d;font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;word-break:keep-all}
@@ -103,7 +101,7 @@ input[type=range]{accent-color:#ff5a14}
 
 <section id="about" data-screen-label="About" style="max-width:1200px;margin:0 auto;padding:clamp(100px,13vw,140px) clamp(20px,5vw,40px) clamp(80px,11vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,7vw,80px);align-items:center">
   <div data-reveal="1" style="aspect-ratio:4/5;background:#f2f2f2;border-radius:28px;overflow:hidden">
-    <image-slot id="v2-about" src="images/img_4093.jpg" shape="rect" placeholder="대표 / 시공팀 현장 사진"></image-slot>
+    <image-slot id="v2-about" src="images/n_10.jpg" shape="rect" placeholder="대표 / 시공팀 현장 사진"></image-slot>
   </div>
   <div data-reveal="1" data-delay="150" style="display:flex;flex-direction:column;gap:28px">
     <span style="font-size:16px;font-weight:700;color:#ff5a14">Why KILLSOUND</span>
@@ -246,8 +244,8 @@ input[type=range]{accent-color:#ff5a14}
       <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
         <div data-reveal="1" data-delay="{{ r.delay }}" style="background:#fff;padding:clamp(28px,4vw,40px) clamp(24px,3.6vw,36px);border-radius:28px;display:flex;flex-direction:column;gap:20px">
           <span style="color:#ff5a14;font-size:16px;letter-spacing:2px">★★★★★</span>
-          <p style="margin:0;font-size:16px;line-height:1.85;color:#444;flex:1">"{{ r.text }}"</p>
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:20px;border-top:1px solid #eee;font-size:14px"><strong>{{ r.who }}</strong><span style="color:#999">{{ r.where }}</span></div>
+          
+          <p style="margin:0;font-size:16px;line-height:1.85;color:#444;flex:1">"{{ r.text }}"</p><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:20px;border-top:1px solid #eee;font-size:14px"><strong>{{ r.who }}</strong><span style="color:#999">{{ r.where }}</span></div>
         </div>
       </sc-for>
     </div>
@@ -313,20 +311,21 @@ input[type=range]{accent-color:#ff5a14}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px 48px">
       <div style="display:flex;flex-direction:column"><strong style="color: rgba(255,255,255,0.75); font-weight: 600; font-size: 20px">서울 본사</strong><span style="font-size: 20px">서울특별시 중랑구 겸재로 27길 37<br>A동 402호 킬사운드방음</span></div>
       <div style="display:flex;flex-direction:column"><strong style="color: rgba(255,255,255,0.75); font-weight: 600; font-size: 20px">경기 지점</strong><span style="font-size: 20px">경기도 남양주시 사릉로 58번안길 15-6<br>킬사운드방음</span></div>
+      <div style="display:flex;flex-direction:column"></div>
     </div>
     <span>Copyright © 2026 킬사운드방음 All rights reserved.</span>
   </div></footer>
 
 <sc-if value="{{ showFloat }}" hint-placeholder-val="{{ true }}">
   <div style="position:fixed;right:clamp(14px,2.4vw,24px);bottom:clamp(14px,2.4vw,24px);z-index:30;display:flex;flex-direction:column;gap:10px">
-    <a href="https://open.kakao.com/o/s4VopyRi" target="_blank" rel="noopener" aria-label="카카오톡 상담" style="width:clamp(52px,6vw,60px);height:clamp(52px,6vw,60px);border-radius:50%;background:#fee500;color:#191919;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,0.15)" style-hover="color:#191919">TALK</a>
+    <a href="{{ kakaoUrl }}" target="{{ kakaoTarget }}" rel="noopener" aria-label="카카오톡 상담" style="width:clamp(52px,6vw,60px);height:clamp(52px,6vw,60px);border-radius:50%;background:#fee500;color:#191919;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,0.15)" style-hover="color:#191919">TALK</a>
     <a href="tel:010-5576-1914" aria-label="전화 상담 010-5576-1914" style="width:clamp(52px,6vw,60px);height:clamp(52px,6vw,60px);border-radius:50%;background:#ff5a14;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,0.15)" style-hover="color:#fff">전화</a>
   </div>
 </sc-if>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;floatingButtons&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;kakaoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://open.kakao.com/o/s4VopyRi&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;floatingButtons&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
 class Component extends DCLogic {
   state = { type: 'home', area: 1, grade: 'std', caseCat: '전체', submitted: false, formType: 'practice', scrolled: false, heroIdx: 0, vw: typeof window !== 'undefined' ? window.innerWidth : 1280, menuOpen: false };
 
@@ -336,7 +335,7 @@ class Component extends DCLogic {
     { id: 'studio', label: '홀 스튜디오', lo: 200, hi: null, days: '2주 이상' },
     { id: 'booth', label: '방음 부스', lo: 200, hi: null, days: '당일 설치 가능(면적에 따라 상이)' }
   ];
-  HERO = ['images/k4.jpg', 'images/p3786.jpg', 'images/img_4080.jpg', 'images/k2.jpg'];
+  HERO = ['images/n_00.jpg', 'images/n_14.jpg', 'images/n_10.jpg', 'images/n_06.jpg'];
   GRADES = [
     { id: 'std', label: '기본', desc: '생활소음 차단', m: 1 },
     { id: 'pro', label: '고급', desc: '대화·TV 소리', m: 1.35 },
@@ -438,12 +437,12 @@ class Component extends DCLogic {
     const g = this.GRADES.find(x => x.id === s.grade);
     const fmt = n => (Math.round(n / 10) * 10).toLocaleString();
     const cases = [
-      { cat: '연습실·학원', title: '그랜드 피아노 레슨룸', meta: '흡음 벽체 + 흡음 천장 · 차음 도어', f: 'images/k4.jpg' },
-      { cat: '스튜디오', title: '촬영 · 라이브 홀 스튜디오', meta: '대형 홀 흡음 · 차음 구조', f: 'images/p3786.jpg' },
-      { cat: '스튜디오', title: '목재 슬랫 홀 흡음 시공', meta: '슬랫 흡음 벽체 · 방진 마루', f: 'images/k2.jpg' },
-      { cat: '연습실·학원', title: '음악학원 연습실 복도', meta: '흡음 패널 · 차음 도어 · 간접 조명', f: 'images/img_4093.jpg' },
-      { cat: '주거', title: '주거 방음 공간', meta: '흡음 벽체 · 방음 도어 · 마루 바닥', f: 'images/img_4099.jpg' },
-      { cat: '방음부스', title: '방음 부스 시공', meta: '박스인박스 구조 · 차음 도어', f: 'images/img_4080.jpg' }
+      { cat: '스튜디오', title: '녹음 · 작곡 스튜디오', meta: '슬랫 흡음 천장 · 간접 조명 · 차음 벽체', f: 'images/n_00.jpg' },
+      { cat: '연습실·학원', title: '드럼 연습실', meta: '흡음 패널 마감 · 방진 바닥', f: 'images/n_13.jpg' },
+      { cat: '스튜디오', title: '그랜드 피아노 연주 홀', meta: '흡음 천장 · 무대 조명 · 차음 구조', f: 'images/n_14.jpg' },
+      { cat: '연습실·학원', title: '그랜드 피아노 개인 연습실', meta: '흡음 패널 · 간접 조명', f: 'images/n_06.jpg' },
+      { cat: '방음부스', title: '방음 부스 연습실 4실', meta: '차음 도어 · 간접 조명 복도', f: 'images/n_07.jpg' },
+      { cat: '주거', title: '주거 레슨 · 작업 공간', meta: '목재 슬랫 흡음 벽체', f: 'images/n_11.jpg' }
     ].map((c, i) => ({ ...c, slot: 'v2-case-' + i, src: c.f, delay: (i % 3) * 120 }));
     const cats = ['전체', '주거', '연습실·학원', '스튜디오', '방음부스'];
     const rowBase = { display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: s.vw < 860 ? 24 : 56 };
@@ -462,7 +461,7 @@ class Component extends DCLogic {
         { label: '회사소개', href: '#about' }, { label: '시공분야', href: '#fields' }, { label: '시공사례', href: '#cases' },
         { label: '견적계산기', href: '#estimate' }, { label: '고객후기', href: '#reviews' }, { label: '상담문의', href: '#contact' }
       ],
-      gallery: [0, 1].flatMap(() => [['images/k4.jpg', 1], ['images/img_4093.jpg', 0], ['images/p3786.jpg', 1], ['images/k3.jpg', 0], ['images/k1.jpg', 1], ['images/img_4086.jpg', 0], ['images/img_4080.jpg', 1], ['images/k6.jpg', 0], ['images/k2.jpg', 1], ['images/img_4099.jpg', 1]]).map(([f, land]) => ({
+      gallery: [0, 1].flatMap(() => [['images/n_00.jpg', 1], ['images/n_13.jpg', 0], ['images/n_14.jpg', 1], ['images/n_07.jpg', 0], ['images/n_10.jpg', 1], ['images/n_11.jpg', 0], ['images/n_06.jpg', 1], ['images/n_09.jpg', 1]]).map(([f, land]) => ({
         src: f,
         box: { flexShrink: 0, height: s.vw < 860 ? 240 : 380, aspectRatio: land ? '4 / 3' : '3 / 4', marginRight: s.vw < 860 ? 12 : 16, borderRadius: 24, overflow: 'hidden', background: '#222' }
       })),
@@ -472,6 +471,8 @@ class Component extends DCLogic {
           opacity: on ? 1 : 0, transform: on ? 'scale(1.08)' : 'scale(1)',
           transition: on ? 'opacity 1.8s ease, transform 7.5s linear' : 'opacity 1.8s ease, transform 0s linear 1.8s' } };
       }),
+      kakaoUrl: this.props.kakaoUrl || 'https://open.kakao.com/o/s4VopyRi',
+      kakaoTarget: '_blank',
       showFloat: this.props.floatingButtons ?? true,
       quick: [
         { sub: '1분 소요', title: '견적 계산기', href: '#estimate' },
@@ -480,10 +481,10 @@ class Component extends DCLogic {
         { sub: '평일 09–19시', title: '카카오톡 상담', href: 'https://open.kakao.com/o/s4VopyRi' }
       ],
       fields: [
-        { title: '주거 방음 공간', img: '주거 방음 공간 사진', desc: '집에서도 마음 놓고 연주하고 쉬는 공간.\n벽체·천장 차음과 바닥 완충 구조로\n이웃 걱정 없는 방을 만듭니다.', tags: '아파트 • 빌라 • 단독주택 • 오피스텔', f: 'images/img_4099.jpg' },
-        { title: '음악 연습실 & 학원', img: '피아노 연습실 사진', desc: '여러 실이 동시에 울려도 서로 섞이지 않도록\n실별 차음 구조와 흡음 마감을\n함께 설계합니다.', tags: '피아노 • 성악 • 관현악 • 실용음악 학원', f: 'images/k1.jpg' },
-        { title: '홀 스튜디오', img: '홀 스튜디오 사진', desc: '촬영, 라이브, 공연까지 소화하는 넓은 홀.\n울림을 잡는 흡음 설계와\n외부로 새지 않는 차음 구조를 시공합니다.', tags: '촬영 스튜디오 • 공연 홀 • 댄스 • 라이브 방송', f: 'images/p3786.jpg' },
-        { title: '방음 부스', img: '방음 부스 사진', desc: '보컬 녹음, 화상회의, 개인 연습까지.\n공간에 딱 맞는 크기로\n박스인박스 방음 부스를 제작합니다.', tags: '보컬 부스 • 드럼 부스 • 1인 연습실 • 회의 부스', f: 'images/img_4080.jpg' }
+        { title: '주거 방음 공간', img: '주거 방음 공간 사진', desc: '집에서도 마음 놓고 연주하고 쉬는 공간.\n벽체·천장 차음과 바닥 완충 구조로\n이웃 걱정 없는 방을 만듭니다.', tags: '아파트 • 빌라 • 단독주택 • 오피스텔', f: 'images/n_11.jpg' },
+        { title: '음악 연습실 & 학원', img: '피아노 연습실 사진', desc: '여러 실이 동시에 울려도 서로 섞이지 않도록\n실별 차음 구조와 흡음 마감을\n함께 설계합니다.', tags: '피아노 • 성악 • 관현악 • 실용음악 학원', f: 'images/n_06.jpg' },
+        { title: '홀 스튜디오', img: '홀 스튜디오 사진', desc: '촬영, 라이브, 공연까지 소화하는 넓은 홀.\n울림을 잡는 흡음 설계와\n외부로 새지 않는 차음 구조를 시공합니다.', tags: '촬영 스튜디오 • 공연 홀 • 댄스 • 라이브 방송', f: 'images/n_14.jpg' },
+        { title: '방음 부스', img: '방음 부스 사진', desc: '보컬 녹음, 화상회의, 개인 연습까지.\n공간에 딱 맞는 크기로\n박스인박스 방음 부스를 제작합니다.', tags: '보컬 부스 • 드럼 부스 • 1인 연습실 • 회의 부스', f: 'images/n_07.jpg' }
       ].map((f, i) => ({ ...f, slot: 'v2-field-' + i, src: f.f, rowStyle: { ...rowBase, flexDirection: i % 2 ? 'row-reverse' : 'row' } })),
       typeOpts: this.TYPES.map(x => ({ id: x.id, label: x.label, style: this.chip(x.id === s.type), pick: () => this.setState({ type: x.id }) })),
       gradeOpts: this.GRADES.map(x => {
@@ -501,8 +502,8 @@ class Component extends DCLogic {
       caseFilters: cats.map(c => ({ label: c, style: this.chip(c === s.caseCat, true), pick: () => this.setState({ caseCat: c }) })),
       visibleCases: s.caseCat === '전체' ? cases : cases.filter(c => c.cat === s.caseCat),
       reviews: [
-        { text: '아랫집 민원 때문에 피아노를 거의 못 쳤는데, 시공 후에는 저녁에도 마음 편히 연습하고 있습니다. 시공 전후로 측정해서 보여주셔서 더 믿음이 갔어요.', who: '김○○ 고객님', where: '연습실 · 서대문구' },
-        { text: '여러 업체에 견적을 받아봤는데 원인부터 제대로 측정해 주신 곳은 킬사운드뿐이었습니다. 측정해주시고 끝까지 시공해주셔서 마음에 들었습니다.', who: '박○○ 고객님', where: '아파트 · 분당' },
+        { text: '아랫집 민원 때문에 피아노를 거의 못 쳤는데, 시공 후에는 저녁에도 마음 편히 연습하고 있습니다. 시공 전후로 측정해서 보여주셔서 더 믿음이 갔어요.', who: '김○○ 고객님', where: '아파트 · 서대문구' },
+        { text: '여러 업체에 견적을 받아봤는데 원인부터 제대로 측정해 주신 곳은 킬사운드뿐이었습니다. 측정해주시고 끝까지 시공해주셔서 마음에 들었습니다.', who: '박○○ 고객님', where: '연습실 · 분당' },
         { text: '회의실 대화가 밖으로 새던 문제가 깔끔하게 해결됐습니다. 영업에 지장 없도록 일정 맞춰 빠르게 마무리해 주셨어요.', who: '이○○ 대표님', where: '사무실 · 강남구' }
       ].map((r, i) => ({ ...r, delay: i * 120 })),
       steps: [
@@ -510,7 +511,7 @@ class Component extends DCLogic {
         { no: '02', title: '현장 측정', desc: '전문가 방문\n소음 측정 (무료)' },
         { no: '03', title: '설계 · 견적', desc: '측정 결과 기반\n맞춤 설계안 제안' },
         { no: '04', title: '시공', desc: '자체 시공팀\n직영 시공' },
-        { no: '05', title: '재측정 · A/S', desc: '결과 보고서 제공\n2년 하자보증' }
+        { no: '05', title: '재측정 확인 · A/S', desc: '1년 하자보증' }
       ].map((s, i) => ({ ...s, delay: i * 100 })),
       formType: s.formType, setFormType: e => this.setState({ formType: e.target.value }),
       submitted: s.submitted, notSubmitted: !s.submitted,
