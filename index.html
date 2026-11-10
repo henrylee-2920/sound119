@@ -10,7 +10,7 @@
 <helmet>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <script src="./image-slot.js"></script>
-<link rel="preload" as="image" href="images/hero_piano.jpg">
+<link rel="preload" as="image" href="images/home_piano_room.jpg">
 <link rel="preload" as="image" href="images/n_14.jpg">
 <link rel="preload" as="image" href="images/n_10.jpg">
 <link rel="preload" as="image" href="images/n_06.jpg">
@@ -335,7 +335,7 @@ class Component extends DCLogic {
     { id: 'studio', label: '홀 스튜디오', lo: 200, hi: null, days: '2주 이상' },
     { id: 'booth', label: '방음 부스', lo: 200, hi: null, days: '당일 설치 가능(면적에 따라 상이)' }
   ];
-  HERO = ['images/hero_piano.jpg', 'images/n_00.jpg', 'images/n_14.jpg', 'images/n_10.jpg', 'images/n_06.jpg'];
+  HERO = ['images/home_piano_room.jpg', 'images/hero_piano.jpg', 'images/n_00.jpg', 'images/n_14.jpg', 'images/n_10.jpg', 'images/n_06.jpg'];
   GRADES = [
     { id: 'std', label: '기본', desc: '생활소음 차단', m: 1 },
     { id: 'pro', label: '고급', desc: '대화·TV 소리', m: 1.35 },
@@ -437,6 +437,7 @@ class Component extends DCLogic {
     const g = this.GRADES.find(x => x.id === s.grade);
     const fmt = n => (Math.round(n / 10) * 10).toLocaleString();
     const cases = [
+      { cat: '주거', title: '주거 피아노 연습실', meta: '흡음 천장 · 간접 조명 · 슬랫 흡음 벽체', f: 'images/home_piano_room.jpg' },
       { cat: '스튜디오', title: '녹음 · 작곡 스튜디오', meta: '슬랫 흡음 천장 · 간접 조명 · 차음 벽체', f: 'images/n_00.jpg' },
       { cat: '연습실·학원', title: '드럼 연습실', meta: '흡음 패널 마감 · 방진 바닥', f: 'images/n_13.jpg' },
       { cat: '스튜디오', title: '그랜드 피아노 연주 홀', meta: '흡음 천장 · 무대 조명 · 차음 구조', f: 'images/n_14.jpg' },
