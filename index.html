@@ -330,9 +330,9 @@ class Component extends DCLogic {
   state = { type: 'home', area: 1, grade: 'std', caseCat: '전체', submitted: false, formType: 'practice', scrolled: false, heroIdx: 0, vw: typeof window !== 'undefined' ? window.innerWidth : 1280, menuOpen: false };
 
   TYPES = [
-    { id: 'home', label: '주거 방음 공간', lo: 150, hi: 170, days: '약 3일' },
-    { id: 'practice', label: '음악 연습실 · 학원', lo: 170, hi: 190, days: '1주 이상' },
-    { id: 'studio', label: '홀 스튜디오', lo: 200, hi: null, days: '2주 이상' },
+    { id: 'home', label: '주거 방음 공간', lo: 200, hi: null, days: '약 3일' },
+    { id: 'practice', label: '음악 연습실 · 학원', lo: 250, hi: null, days: '1주 이상' },
+    { id: 'studio', label: '홀 스튜디오', lo: 250, hi: null, days: '2주 이상' },
     { id: 'booth', label: '방음 부스', lo: 200, hi: null, days: '당일 설치 가능(면적에 따라 상이)' }
   ];
   HERO = ['images/home_piano_room.jpg', 'images/hero_piano.jpg', 'images/n_00.jpg', 'images/n_14.jpg', 'images/n_10.jpg', 'images/n_06.jpg'];
